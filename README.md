@@ -8,26 +8,6 @@
 - **来源**：GitHub Trending API + 手动精选优质项目
 - **频率**：每天上午 8 点自动更新
 
-## 📁 存储结构
-
-```
-github-chinese-trending/
-├── data/
-│   ├── 2026-03-15.md          # 当天数据
-│   ├── 2026-03-14.md          # 前一天数据
-│   └── ...
-├── scripts/
-│   ├── fetch_data.py          # 数据抓取
-│   ├── classify.py            # 项目分类
-│   └── generate_daily.py      # 生成每日文档
-├── utils/
-│   ├── scraper.py             # 爬虫工具
-│   └── classifier.py          # 分类器
-└── .github/
-    └── workflows/
-        └── update.yml         # GitHub Actions 自动更新
-```
-
 ## 🏷️ 分类方式
 
 ### 1. 编程语言分类
@@ -63,7 +43,7 @@ pip install -r requirements.txt
 # 运行更新脚本
 python scripts/fetch_data.py
 python scripts/classify.py
-python scripts/generate_daily.py
+python scripts/generate_readme.py
 ```
 
 ### 自动更新
@@ -77,7 +57,7 @@ python scripts/generate_daily.py
 
 ## 📝 添加手动精选项目
 
-在 `scripts/add_manual_projects.py` 中添加：
+在 `scripts/` 目录下的 `scraper.py` 中添加：
 
 ```python
 MANUAL_PROJECTS = [
@@ -88,7 +68,11 @@ MANUAL_PROJECTS = [
         "language": "Python",
         "category": "AI/ML",
         "stars": 1000,
-        "reason": "精选理由"
+        "forks": 100,
+        "updated_at": datetime.now().isoformat(),
+        "created_at": "2026-03-15T00:00:00Z",
+        "topics": ["ai", "ml"],
+        "is_chinese": False
     }
 ]
 ```
