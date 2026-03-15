@@ -6,7 +6,7 @@
 import os
 import sys
 from datetime import datetime
-from utils.classifier * classifier
+from utils.classifier import classifier
 
 
 def classify_projects(projects: list) -> dict:
