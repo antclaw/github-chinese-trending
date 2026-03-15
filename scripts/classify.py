@@ -6,16 +6,15 @@
 import os
 import sys
 from datetime import datetime
-from utils.classifier import classifier
+from utils.classifier * classifier
 
 
-def classify_projects(projects: list, date_str: str) -> dict:
+def classify_projects(projects: list) -> dict:
     """
     分类项目
 
     Args:
         projects: 项目列表
-        date_str: 日期字符串
 
     Returns:
         分类结果字典
@@ -28,10 +27,7 @@ def classify_projects(projects: list, date_str: str) -> dict:
     classified = classifier.classify_projects(projects)
 
     # 保存分类结果
-    data_dir = os.path.join("data", date_str)
-    os.makedirs(data_dir, exist_ok=True)
-
-    json_path = os.path.join(data_dir, "classified.json")
+    json_path = "data/classified.json"
     with open(json_path, "w", encoding="utf-8") as f:
         import json
         json.dump(classified, f, ensure_ascii=False, indent=2)
@@ -96,7 +92,7 @@ def main():
     today = datetime.now().strftime("%Y-%m-%d")
 
     # 读取项目数据
-    json_path = os.path.join("data", today, "projects.json")
+    json_path = f"data/{today}/projects.json"
     if not os.path.exists(json_path):
         print(f"\n❌ Error: {json_path} not found")
         print("Please run fetch_data.py first")
@@ -109,11 +105,11 @@ def main():
     print(f"\nLoaded {len(projects)} projects from {json_path}")
 
     # 分类项目
-    classified = classify_projects(projects, today)
+    classified = classify_projects(projects)
 
     # 生成并保存统计信息
     stats = generate_stats(classified)
-    stats_path = os.path.join("data", today, "stats.txt")
+    stats_path = "data/stats.txt"
     with open(stats_path, "w", encoding="utf-8") as f:
         f.write(stats)
 

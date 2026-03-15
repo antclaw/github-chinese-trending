@@ -47,18 +47,17 @@ def fetch_all_projects() -> list:
     return unique_projects
 
 
-def save_projects(projects: list, date_str: str) -> str:
+def save_projects(projects: list) -> str:
     """
     保存项目数据到 JSON 文件
 
     Args:
         projects: 项目列表
-        date_str: 日期字符串
 
     Returns:
         JSON 文件路径
     """
-    data_dir = os.path.join("data", date_str)
+    data_dir = "data"
     os.makedirs(data_dir, exist_ok=True)
 
     json_path = os.path.join(data_dir, "projects.json")
@@ -85,7 +84,7 @@ def main():
     print(f"\nTotal projects fetched: {len(projects)}")
 
     # 保存数据
-    json_path = save_projects(projects, today)
+    json_path = save_projects(projects)
 
     print("\n✅ Data fetching completed!")
     print(f"📁 Saved to: {json_path}")

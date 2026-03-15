@@ -31,14 +31,14 @@ jobs:
         run: |
           python scripts/classify.py
 
-      - name: Generate daily report
+      - name: Generate README
         run: |
-          python scripts/generate_daily.py
+          python scripts/generate_readme.py
 
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/
+          git add README.md
           git commit -m "chore: update daily ranking $(date +%Y-%m-%d)" || echo "No changes"
           git push
