@@ -22,8 +22,7 @@ build/
 Thumbs.db
 
 # Data
-data/*.json
-data/*.txt
+data/
 
 # Secrets
 .secrets/
