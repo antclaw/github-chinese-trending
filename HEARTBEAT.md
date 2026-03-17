@@ -1545,3 +1545,39 @@ Rotate through these tasks 2-4 times per day:
 **Status:** 🟡 Partially Complete (pending push for github-chinese-trending)
 
 **Next:** Evening Check (20-22 PM, 2026-03-17)
+
+---
+
+## Late Night Check - 2026-03-18 (02:22 AM)
+- [x] Check git status
+- [x] Review memory files
+- [x] Check project status (github-chinese-trending, github-chinese-top-charts)
+- [x] Update HEARTBEAT.md with current status
+
+**Tasks Completed:**
+- Checked both project repositories
+- Confirmed working tree clean
+- Verified all changes pushed to remote
+- Reviewed memory files
+- Created daily memory file for 2026-03-18
+
+**Repository Status:**
+
+1. **github-chinese-trending** ✅
+   - URL: https://github.com/antclaw/github-chinese-trending
+   - Status: Clean, up to date with origin/master
+   - Latest commit: f8bfb66 (docs: complete afternoon check 2026-03-17 (16:22 PM))
+   - README.md: 25KB, 256 projects, 12 categories
+   - Workflow: Active (daily 8 AM Beijing time)
+   - Status: ✅ Production ready
+
+2. **github-chinese-top-charts** ✅
+   - URL: https://github.com/antclaw/github-chinese-top-charts
+   - Status: Clean, up to date with origin/master
+   - Latest commit: 08dd2cb (docs: add HEARTBEAT.md for tracking periodic tasks)
+   - README.md: Not checked
+   - Status: ✅ Production ready
+
+**Status:** 🟢 Complete
+
+**Next:** Morning Check (9-11 AM, 2026-03-18)
